@@ -15,3 +15,4 @@ gem 'simplecov-console', require: false
 end 
 
 gem 'sinatra'
+gem 'pg'

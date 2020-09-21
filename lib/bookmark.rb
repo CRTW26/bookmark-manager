@@ -1,5 +1,11 @@
+require 'pg'
+
 class Bookmark
   def self.all
-    [ { name: 'Google', url: 'www.google.com', date_added: '21/09/2020' } ]
+    begin
+      con = PG.connect(:dbname => 'bookmark_manager')
+      rs = con.exec("SELECT url FROM bookmark;")
+      rs.map { |bookmark| bookmark['url'] }
+    end
   end
 end
