@@ -1,4 +1,8 @@
-feature 'can view bookmarks' do 
+ 
+feature 'can view bookmarks' do
+  before(:each) do 
+  drop_table
+end 
   scenario 'displays bookmarks that you have added' do 
     visit '/'
     click_button 'View bookmarks'
