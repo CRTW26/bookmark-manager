@@ -1,6 +1,7 @@
 require 'pg'
 
 class Bookmark
+
   def self.all
     begin
       con = PG.connect(:dbname => 'bookmark_manager')
